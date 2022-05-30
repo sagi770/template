@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<!-- saved from url=(0091)https://gateway20.pelecard.biz/PaymentGW?transactionId=cd829d80-18ea-4e47-94ac-6a26b98f70a6 -->
+<html class=" js no-flexbox flexbox-legacy canvas canvastext webgl no-touch geolocation postmessage websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers no-applicationcache svg inlinesvg smil svgclippaths" lang="he"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <script type="text/javascript">
+            // window.history.forward();
+    </script>
+    
+    
+    <meta name="MobileOptimized" content="320">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    
+    <meta name="apple-mobile-web-app-capable" content="no">
+    <title>פלאקארד, טופס תשלום בכרטיס אשראי</title>
+    <script src="./jquery-1.7.1.js" type="text/javascript"></script>
+    <script src="./modernizr-2.5.3.js" type="text/javascript"></script>
+    <script src="./jquery.bpopup.min.js" type="text/javascript"></script>
+    <script src="./jquery.blockUI.js" type="text/javascript"></script>
+    <script src="./jquery-ui-1.8.20.min.js" type="text/javascript"></script>
+
+    
+    <link href="./elements.css" rel="stylesheet" type="text/css">
+    <link href="./jquery-ui.css" rel="stylesheet" type="text/css">
+
+        <link href="./pelecard.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+    
+<div class="body-content">
+
+    <div class="topRef" id="topRef">
+        <div class="container">
+            <div class="ssl-txt">
+                <i class="ic-p ssl-ic"></i>
+                אתר זה מאובטח בטכנולוגיית SSL ובתקן PCI LEVEL 1
+                &nbsp;♿
+                    <a href="https://gateway20.pelecard.biz/Content/accessibility_statement_he.htm" target="_blank">הצהרת נגישות</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="credit-title" id="paymentHeader">
+        <div class="container">
+            <div class="credit-title-1 clearfix">
+                    <div class="logo" id="creditLogo"></div>
+                
+                <h1 class="title" id="paymentByCC">תשלום באמצעות כרטיס אשראי</h1>
+            </div>
+        </div>
+    </div>
+
+    <div class="errorRow" id="errorRow" role="alert" aria-atomic="true" aria-live="assertive" style="display:none"></div>
+
+    <div id="MainDiv" class="main">
+
+        <div id="content_container" class="container">
+
+            <div class="main-content">
+                <h1 class="text-center"></h1>
+
+
+
+
+
+
+
+
+                    <div id="CcAndDateRow" class="row">
+                        <div class="col-sm-6">
+                            <div id="creditCardRow" class="form-group">
+                                <label class="control-label" for="credit_card_number_input">
+                                        <img src="./star.png" id="credit_card_number_input_star_id" alt="כרטיס אשראי שדה חובה" title="כרטיס אשראי שדה חובה" style="width:14px; height:14px;vertical-align: top">
+                                    <span>
+                                        מספר כרטיס
+                                    </span>
+
+                                    <img id="brand_icon" style="height: 56px; width:56px; display:none; position:absolute; left:0; top:-12px">
+                                    <em id="credit_card_number_input_clear" class="ic-p clear-ic" style="display:none"></em>
+                                </label>
+
+                                <div class="control-value">
+                                    <input class="required form-control" id="credit_card_number_input" autocomplete="off" maxlength="50" name="CreditCard" type="tel" value="" placeholder="">
+                                    <div id="reset"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div id="creditCardExpDateRow" class="form-group">
+                                <label class="control-label" for="date_year_input">
+                                    
+                                    <img src="./star.png" id="date_year_input_star_id" alt="שנה שדה חובה" title="שנה שדה חובה" style="display:none;width:14px; height:14px;vertical-align: top">
+                                        <span id="dateText">
+                                            תוקף כרטיס
+                                        </span>
+                                </label>
+                                <div id="dateContainer" class="control-value">
+<select class="form-control form-control-1 notranslate" data-placeholder="שנה" id="date_year_input" name="YearsList" title="שנה"><option>2021</option>
+<option>2022</option>
+<option>2023</option>
+<option>2024</option>
+<option>2025</option>
+<option>2026</option>
+<option>2027</option>
+<option>2028</option>
+<option>2029</option>
+<option>2030</option>
+<option>2031</option>
+<option>2032</option>
+</select>                                        <span class="delimiter"><span>/</span></span>
+<select class="form-control form-control-2 notranslate" data-placeholder="חודש" id="date_month_input" name="MonthsList1" title="חודש"><option>01</option>
+<option>02</option>
+<option>03</option>
+<option>04</option>
+<option selected="selected">05</option>
+<option>06</option>
+<option>07</option>
+<option>08</option>
+<option>09</option>
+<option>10</option>
+<option>11</option>
+<option>12</option>
+</select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                <div id="IdAndCvvRow" class="row">
+                        <div id="IdContainer" class="col-sm-6">
+
+                            <div id="cardHolderIdRow" class="form-group">
+                                <label class="control-label" for="id_number_input">
+                                        <img src="./star.png" id="teudat_zehut_input_star_id" alt="תעודת זהות שדה חובה" title="תעודת זהות שדה חובה" style="width:14px; height:14px;vertical-align: top">
+                                    <span>
+                                        תעודת זהות
+                                    </span>
+                                </label>
+                                <div class="control-value">
+<input autocomplete="off" class="required form-control" id="id_number_input" inputmode="text" maxlength="9" name="CreditCardHoldIder" type="text" value="">                                </div>
+                            </div>
+
+                        </div>
+                        <div id="CvvContainer" class="col-sm-6">
+
+                            <div id="cvvRow" class="form-group">
+                                <label class="control-label" for="cvv_input">
+                                        <img src="./star.png" id="cvv_star_id" alt="קוד אימות כרטיס שדה חובה" title="קוד אימות כרטיס שדה חובה" style="width:14px; height:14px;vertical-align: top">
+                                    <span>
+                                        קוד אימות כרטיס
+                                    </span>
+                                    
+
+                                        <button id="info" title="לחץ לפתיחת תמונת הסבר על קוד אימות כרטיס">
+                                            <img src="./icon_info.png" id="iconInfoId">
+                                        </button>
+                                </label>
+                                <div class="control-value">
+<input autocomplete="off" class="required form-control" id="cvv_input" inputmode="text" maxlength="4" name="Cvv2" type="text" value="" title="הסבר: קוד אימות כרטיס הוא שלוש או ארבע הספרות האחרונות המופיעות בגב הכרטיס אשראי. אם הכרטיס זה אמריקן אקספרס חוץ לארץ, קוד אימות כרטיס הוא ארבע  ספרות בקדמת הכרטיס.">                                </div>
+                            </div>
+
+                        </div>
+                </div>
+                    <div id="TotalAndFreeTotalRow" class="row">
+                            <div class="col-sm-6">
+
+                                <div id="totalAllRow" class="form-group">
+                                    <label class="control-label" for="totalAll">
+                                        <span>
+                                            סכום לתשלום
+                                        </span>
+                                    </label>
+                                    <div class="control-value">
+                                        <div class="control-group">
+                                                <input type="text" class="form-control read-only" value="0.50" name="totalAll" autocomplete="off" id="totalAll" readonly="readonly">
+                                            <div id="total_currency" class="ext notranslate">
+                                                ₪
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                    </div>
+
+
+
+                <div id="CustomerAddressAndCity" class="row">
+
+
+                </div>
+
+                <div id="EmailAndPhoneRow" class="row">
+                </div>
+
+
+                <div id="remarks" class="form-group">
+                </div>
+
+                <div id="orderDetailsRow" class="form-group">
+
+                    <label class="control-label">
+                        <span>
+
+                        </span>
+                    </label>
+
+                    <div class="control-value">
+
+
+
+                    </div>
+                </div>
+
+                <div id="submitRow" class="form-group form-group-submit">
+                    <div class="form-group-submit-in">
+                            <button type="button" id="submitBtn" class="btn btn-submit" title="אחרי לחיצה תועבר חזרה לאתר בית העסק">בצע תשלום </button>
+
+                            <button type="button" id="cancelBtn" class="btn btn-default">חזרה לעגלה</button>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="footer" id="footer">
+        <div class="container">
+                <div id="secureIconsRow" class="form-group-sup form-group-sup-2">
+                    <div class="form-group-sup-in">
+                            <a href="https://www.pcisecuritystandards.org/security_standards" target="_blank" class="sup-lg-ic-1" title="PCI DSS COMPLIANT" rel="lightbox"></a>
+                            <a href="https://seal.digicert.com/seals/popup/?tag=LeAItj3O&amp;url=gateway21.pelecard.biz&amp;cbr=1653208153966" target="_blank" class="sup-lg-ic-2" title="SSL Encryption By DigiCert"></a>
+                            <a href="https://www.pelecard.com/" target="_blank" class="sup-lg-ic-3" title="Powered By Pelecard"></a>
+                    </div>
+                </div>
+        </div>
+    </div>
+
+    <div id="authNumFromCreditCompany" style="display:none; overflow:hidden;">
+        <div class="errorRow" id="dialogErrorRow" style="display:none">
+            <div class="container">
+                <div id="dialogError" class="error">
+                </div>
+            </div>
+        </div>
+
+        <div>
+            <label class="label-primary">נדרש מספר אישור, צור קשר עם חברת האשראי</label>
+            <label class="control-label">מספר אישור</label>
+            <input id="authorizationNumber" class="required form-control">
+            <hr>
+            <button id="authorizationNumberSubmitBtn" data-url="/PaymentGW/transaction" class="btn btn-submit">
+                בצע תשלום
+            </button>
+        </div>
+    </div>
+
+</div>
+
+<div id="info_popup" style="display: none">
+    <input type="image" id="closeInfoPopupButton" class="modal-close" src="./close.png" alt="סגור את החלון עם הסברים על קוד אימות כרטיס ">
+    <div class="modal-box">
+        <div id="modalBoxContentPelecardId" class="modal-box-content">
+        </div>
+    </div>
+</div>
+
+
+
+<input id="TimeoutRedirect" name="TimeoutRedirect" type="hidden" value="/PaymentGW/TimeOutTransaction">
+
+
+
+<script src="./General.js" type="text/javascript"></script>
+<script src="./Payment.js" type="text/javascript"></script>
+<script src="./Constants.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+
+    $(document).ready(function () {
+
+        var timeOutInMiliseconds = (597 * 1000);  // convert to miliseconds
+        generalParameters =  {"TransactionId":"cd829d80-18ea-4e47-94ac-6a26b98f70a6","FirstPaymentMode":"auto","FirstPaymentLock":false,"MinFirstPayment":"0.00","MinPaymentsForCredit":"","SplitCCNumber":"false","SplitCCNumberWithSpaces":false,"EmvPinpad":null,"SetFocus":"","AllowedBINs":"","BlockedBINs":"","CaptionSet":{"cs_main_logo_title":"פלאקארד עסקים סולקים בבטחון","cvv_Picture_Alt_Text":"לחץ לפתיחת תמונת הסבר על קוד אימות כרטיס","cvv_Input_Title":"הסבר: קוד אימות כרטיס הוא שלוש או ארבע הספרות האחרונות המופיעות בגב הכרטיס אשראי. אם הכרטיס זה אמריקן אקספרס חוץ לארץ, קוד אימות כרטיס הוא ארבע  ספרות בקדמת הכרטיס.","cs_Tokef_Month_Title":"חודש","cs_Tokef_Year_Title":"שנה","cs_Number_Of_Payments_Title":"בחר מספר תשלומים","cs_Cvv_Popup_Alt_Text":"מסך צף עם הסברים על קוד אימות כרטיס","cs_Cvv_Popup_Close_Alt_Text":"סגור את החלון עם הסברים על קוד אימות כרטיס ","cs_pay_now_button_title":"אחרי לחיצה תועבר חזרה לאתר בית העסק","cs_req_field_holder_name":"שם בעל הכרטיס אשראי שדה חובה","cs_req_field_token":"טוקן שדה חובה","cs_req_field_credit_card_number":"כרטיס אשראי שדה חובה","cs_req_field_date_year":"שנה שדה חובה","cs_req_field_teudat_zehut":"תעודת זהות שדה חובה","cs_req_field_cvv":"קוד אימות כרטיס שדה חובה","cs_req_field_customer_address":"רחוב ומספר בית שדה חובה","cs_req_field_customer_city":"עיר שדה חובה","cs_req_field_customer_index":"מיקוד שדה חובה","cs_req_field_email":"אימייל שדה חובה","cs_req_field_phone":"טלפון שדה חובה","cs_image_visa_title":"כרטיס אשראי ויזה","cs_image_mastercard_title":"כרטיס אשראי מאסטרקארד","cs_image_diners_title":"כרטיס אשראי דיינרס","cs_image_isracard_title":"כרטיס אשראי ישראכרט","cs_form_caption":"פלאקארד, טופס תשלום בכרטיס אשראי","cs_header_asterisk_required":"כוכבית הינה שדה חובה","cs_header_payment":"תשלום באמצעות כרטיס אשראי","cs_header_registeration":"רישום באמצעות כרטיס אשראי","cs_holdername":"שם בעל הכרטיס/חברה","cs_business_number":"ח.פ.","cs_cardnumber":"מספר כרטיס","cs_expiration":"תוקף כרטיס","cs_id":"תעודת זהות","cs_customer_address":"רחוב ומספר בית","cs_customer_city":"עיר","cs_customer_index":"מיקוד","cs_customer_country":"מדינה","cs_cvv":"קוד אימות כרטיס","cs_payments":"מספר תשלומים","cs_xparam":"פרטים נוספים","cs_total":"סכום לתשלום","cs_supported_cards":"אתר זה מכבד את הכרטיסים הבאים","cs_orderdetails":"פרטי ההזמנה","cs_generaldetails":"מידע כללי","cs_mustfields":"שדות חובה","cs_submit":"בצע תשלום","cs_paypal_btn":"PayPal תשלום באמצעות","cs_cancel":"חזרה לעגלה","cs_eop_status_good":"העסקה עברה בהצלחה","cs_eop_status_bad":"העסקה נכשלה","cs_eop_goto_site":"למעבר לאתר לחץ כאן","cs_eop_free_text":null,"cs_free_total":"הוסף לסכום","cs_first_payment":"תשלום ראשון","cs_each_payment":"תשלום קבוע","cs_email":"דוא\"ל רוכש","cs_phone":"טלפון רוכש","cs_remarks":"הערות","cs_credit":"(תשלומי קרדיט)","cs_approval_no":"מספר אישור","cs_voucher_no":"מספר שובר","cs_Security_Statment":"אתר זה מאובטח בטכנולוגיית SSL ובתקן PCI LEVEL 1","cs_Refund_Notification":"שימו לב! הינכם עומדים לבצע פעולת זיכוי!","cs_month":"חודש","cs_year":"שנה","cs_token":"טוקן","cs_auth_num_required_message":"נדרש מספר אישור, צור קשר עם חברת האשראי","cs_validAuthNumMessage":"מספר אישור מוגבל ל-10 תווים","cs_accessibility_statement":"הצהרת נגישות","cs_select_items":"בחר פריטים","cs_item_name":"שם פריט","cs_price":"מחיר","cs_quantity":"כמות","cs_total_sum":"סך הכל","cs_continue_to_payment":"המשך לתשלום","cs_select":"בחר","cs_captcha":"קוד אימות"},"urlCheckCreditCard":"https://gateway20.pelecard.biz/PaymentGW/CheckCreditCard","urlTransaction":"https://gateway20.pelecard.biz/PaymentGW/Transaction","urlCancel":"https://localhost/action.php?typ=pelecardCancel","showSubmitButton":true,"Track2Bypass":"false","Track2Swipe":"false","UserKey":"","FeedbackDataTransferMethod":"","ParamX":"","FeedbackOnTop":"false","IsToken":"false","ShowBrandLogo":false,"PlaceholderCaptions":false,"CaptionExpInput":false,"CustomErrorHandling":false,"ErrorClass":"","RequiredValidatedClass":"","OpenConfirmationBoxInModal":false,"ShowAccessibilityMode":false,"RemoveAriaHiddenAttribute":false,"ReadOnlyFields":null,"ApplePay":{"enabled":false,"label":"Apple Pay","lineItems":[],"requiredShippingContactFields":[],"requiredAddressFields":[],"TabButtonText":"Apple Pay","TabButtonAlt":"שלם עם Apple Pay"},"HideFields":"","CvvImageUrl":"","IframeEventListener":false,"CustomCanRetrayErrors":[],"bussiness_name":"","currencyCode":"ILS","total":0.5} ;
+
+        message.init();
+        message.setLang("he");
+
+        var formCaption = "פלאקארד, טופס תשלום בכרטיס אשראי";
+        document.title = formCaption;
+
+        var titleLogoTxt = "פלאקארד עסקים סולקים בבטחון";
+        $('#logoUrlId').attr('title', titleLogoTxt);
+
+        var titleTokefMonthTxt = "חודש";
+        $('#date_month_input').attr('title', titleTokefMonthTxt);
+
+        var titleTokefYearTxt = "שנה";
+        $('#date_year_input').attr('title', titleTokefYearTxt);
+
+        var numberOfPaymentsTitleTxt = "בחר מספר תשלומים";
+        $('#num_of_payments').attr('title', numberOfPaymentsTitleTxt);
+
+        var logoUrl = "";
+        $('#logoUrlId').attr('src', logoUrl);
+
+        var logoAltText = "";
+        $('#logoUrlId').attr('alt', logoAltText);
+
+        var cvvPopupAltText = "סגור את החלון עם הסברים על קוד אימות כרטיס ";
+        $('#closeInfoPopupButton').attr('alt', cvvPopupAltText);
+
+        //cs_Cvv_Popup_Alt_Text
+
+        var cvvInputTitle = "הסבר: קוד אימות כרטיס הוא שלוש או ארבע הספרות האחרונות המופיעות בגב הכרטיס אשראי. אם הכרטיס זה אמריקן אקספרס חוץ לארץ, קוד אימות כרטיס הוא ארבע  ספרות בקדמת הכרטיס.";
+        $('#cvv_input').attr('title', cvvInputTitle);
+
+        var cvvButtonTitleText = "לחץ לפתיחת תמונת הסבר על קוד אימות כרטיס";
+        $('#info').attr('title', cvvButtonTitleText);
+
+        var payNowButtonText = "אחרי לחיצה תועבר חזרה לאתר בית העסק";
+        $('#submitBtn').attr('title', payNowButtonText);
+
+        var visaLogoTxt = "כרטיס אשראי ויזה";
+        $('#visaImgId').attr('title', visaLogoTxt);
+
+        var masterLogoTxt = "כרטיס אשראי מאסטרקארד";
+        $('#masterImgId').attr('title', masterLogoTxt);
+
+        var dinersLogoTxt = "כרטיס אשראי דיינרס";
+        $('#dinersImgId').attr('title', dinersLogoTxt);
+
+        var isracardLogoTxt = "כרטיס אשראי ישראכרט";
+        $('#isracardImgId').attr('title', isracardLogoTxt);
+
+        DefineRequiredFieldsMessagesByLanguage();
+
+        payment.init(generalParameters);
+
+        function DefineRequiredFieldsMessagesByLanguage()
+        {
+            var cardHolderNameTxt = "שם בעל הכרטיס אשראי שדה חובה";
+            $('#card_holder_name_input_star_id').attr('title', cardHolderNameTxt);
+            $('#card_holder_name_input_star_id').attr('alt', cardHolderNameTxt);
+
+            var tokenTxt = "טוקן שדה חובה";
+            $('#token_input_star_id').attr('title', tokenTxt);
+            $('#token_input_star_id').attr('alt', tokenTxt);
+
+            var creditCardTxt = "כרטיס אשראי שדה חובה";
+            $('#credit_card_number_input_star_id').attr('title', creditCardTxt);
+            $('#credit_card_number_input_star_id').attr('alt', creditCardTxt);
+
+            var yearTxt = "שנה שדה חובה";
+            $('#date_year_input_star_id').attr('title', yearTxt);
+            $('#date_year_input_star_id').attr('alt', yearTxt);
+
+            var teudatZehutTxt = "תעודת זהות שדה חובה";
+            $('#teudat_zehut_input_star_id').attr('title', teudatZehutTxt);
+            $('#teudat_zehut_input_star_id').attr('alt', teudatZehutTxt);
+
+            var cvvTxt = "קוד אימות כרטיס שדה חובה";
+            $('#cvv_star_id').attr('title', cvvTxt);
+            $('#cvv_star_id').attr('alt', cvvTxt);
+
+            var addressTxt = "רחוב ומספר בית שדה חובה";
+            $('#customer_address_input_star_id').attr('title', addressTxt);
+            $('#customer_address_input_star_id').attr('alt', addressTxt);
+
+            var cityTxt = "עיר שדה חובה";
+            $('#customer_city_input_star_id').attr('title', cityTxt);
+            $('#customer_city_input_star_id').attr('alt', cityTxt);
+
+            var custIndexTxt = "מיקוד שדה חובה";
+            $('#customer_index_input_star_id').attr('title', custIndexTxt);
+            $('#customer_index_input_star_id').attr('alt', custIndexTxt);
+
+            var emailTxt = "אימייל שדה חובה";
+            $('#email_input_star_id').attr('title', emailTxt);
+            $('#email_input_star_id').attr('alt', emailTxt);
+
+            var phoneTxt = "טלפון שדה חובה";
+            $('#phone_input_star_id').attr('title', phoneTxt);
+            $('#phone_input_star_id').attr('alt', phoneTxt);
+
+        }
+
+        function redirectToErrorPage() {
+            payment.redirectPaymentFormOnTimeOut();
+        }
+
+        window.setTimeout(redirectToErrorPage, timeOutInMiliseconds);
+
+        $('[name=paymentAdd]').each(function(index, input){
+            input = $(input);
+
+            function onfocus(input){
+                if(Number(input.val() == 0)){
+                    input.val('')
+                }
+            }
+
+            function onblur(input){
+                if(input.val() ==''){
+                    input.val('0.00');
+                }
+            }
+
+            input.focus(function(){onfocus(input) });
+            input.blur(function(){onblur(input) });
+        });
+    });
+
+
+</script>
+
+<input type="hidden" name="PpError" value="Error code:[], ErrorMessage:[]">
+
+
+    <input type="hidden" name="product_version" value="2.0.2 (r17663)">
+    <input type="hidden" name="host_name" value="PELEPCI-WEB10">
+<div style="display: none;background-color: #00E500;bottom: auto;font-family: arial;font-size: 10px;left: 0;position: fixed;right: auto;top: 0;width: 183px;">pelePci-web10</div>
+
+</body></html>
